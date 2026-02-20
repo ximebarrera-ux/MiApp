@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CondominioCHECK | Supervisión y Fiscalización</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #008F68;
+            --primary-dark: #007555;
+            --secondary: #F4F7F6;
+            --text-dark: #2D3436;
+            --text-light: #636E72;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--text-dark); }
+
+        .btn-nav {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 160px 8% 80px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: linear-gradient(135deg, #f9fbfb 0%, #ffffff 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        /* CSS Smartphone Mockup */
+        .mockup-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone {
+            width: 280px;
+            height: 560px;
+            background: #111;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border: 4px solid #333;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+        }
+
+        .app-header {
+            background: var(--primary);
+            height: 100px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .app-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .app-card {
+            background: #f0f0f0;
+            height: 60px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Benefits */
+        .features {
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            padding: 40px;
+            border-radius: 20px;
+            background: var(--secondary);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h3 { margin-bottom: 15px; color: var(--primary); }
+
+        /* Form Section */
+        #contacto {
+            padding: 100px 8%;
+            background: var(--secondary);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-family: inherit;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover { background: var(--primary-dark); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+            .hero-content p { margin: 0 auto 40px; }
+            .mockup-container { order: -1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            CONDOMINIO<span>CHECK</span>
+        </div>
+        <a href="#contacto" class="btn-nav">Solicitar Demo</a>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1>Transparencia Total en tu Comunidad</h1>
+            <p>El workflow especializado para Comités de Administración que buscan supervisar y fiscalizar la gestión con herramientas de precisión.</p>
+            <a href="#contacto" class="btn-nav" style="padding: 18px 40px; font-size: 1.1rem;">EMPEZAR AHORA</a>
+        </div>
+        <div class="mockup-container">
+            <div class="phone">
+                <div class="screen">
+                    <div class="app-header">
+                        <div style="font-size: 10px; opacity: 0.8;">Panel Residente</div>
+                        <div style="font-weight: bold; margin-top: 5px;">Hola, Comité</div>
+                    </div>
+                    <div class="app-content">
+                        <div style="font-weight: bold; margin-bottom: 15px;">Actividades de Fiscalización</div>
+                        <div class="app-card"></div>
+                        <div class="app-card" style="opacity: 0.7;"></div>
+                        <div class="app-card" style="opacity: 0.4;"></div>
+                        <div style="display: flex; justify-content: space-around; margin-top: 140px; border-top: 1px solid #eee; padding-top: 10px;">
+                            <div style="width: 20px; height: 20px; background: #ddd; border-radius: 4px;"></div>
+                            <div style="width: 20px; height: 20px; background: var(--primary); border-radius: 4px;"></div>
+                            <div style="width: 20px; height: 20px; background: #ddd; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2>¿Por qué elegir CondominioCHECK?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Control de Actas</h3>
+                <p>Repositorio centralizado y seguro, para que la documentación de la comunidad esté a la mano de la comunidad</p>
+            </div>
+            <div class="feature-card">
+                <h3>Supervisión Real</h3>
+                <p>Workflow diseñado para aprobar o rechazar hitos de mantenimiento en tiempo real.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Transparencia</h3>
+                <p>Acceso directo a estados financieros y cronogramas de trabajo del administrador.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="form-container">
+            <h2 style="margin-bottom: 10px; text-align: center;">Agendar una Demo</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 30px;">Descubre cómo podemos elevar el estándar de tu administración.</p>
+            <form action="#">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" placeholder="Ej. Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="nombre@condominio.cl">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid #eee;">
+        <p style="color: var(--text-light); font-size: 0.9rem;">&copy; 2026 CondominioCHECK. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
